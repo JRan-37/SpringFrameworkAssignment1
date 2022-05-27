@@ -8,7 +8,7 @@ import java.util.List;
 
 public class App 
 {
-    public static void main( String[] args )
+    public static void start()
     {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.scan("org.genspark.annotations");

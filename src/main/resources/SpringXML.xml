@@ -7,22 +7,22 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
 
-    <bean id="Student" class="org.genspark.Student">
+    <bean id="Student" class="org.genspark.xml.Student">
         <property name="name" value="Mike Tyson"/>
         <property name="id" value="11011001"/>
         <property name="ph" ref="PhoneList"/>
         <property name="add" ref="Address"/>
     </bean>
 
-    <bean id="Phone" class="org.genspark.Phone">
+    <bean id="Phone" class="org.genspark.xml.Phone">
         <property name="mob" value="1-790-278-4695"/>
     </bean>
 
-    <util:list id="PhoneList" list-class="java.util.ArrayList" value-type="org.genspark.Phone">
+    <util:list id="PhoneList" list-class="java.util.ArrayList" value-type="org.genspark.xml.Phone">
         <ref bean="Phone"/>
     </util:list>
 
-    <bean id="Address" class="org.genspark.Address">
+    <bean id="Address" class="org.genspark.xml.Address">
         <property name="city" value="Philadelphia"/>
         <property name="state" value="PA"/>
         <property name="country" value="United States"/>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+    <bean id="Student" class="org.genspark.Student">
+        <property name="name" value="Mike Tyson"/>
+        <property name="id" value="11011001"/>
+        <property name="ph" ref="PhoneList"/>
+        <property name="add" ref="Address"/>
+    </bean>
+
+    <bean id="Phone" class="org.genspark.Phone">
+        <property name="mob" value="1-790-278-4695"/>
+    </bean>
+
+    <util:list id="PhoneList" list-class="java.util.ArrayList" value-type="org.genspark.Phone">
+        <ref bean="Phone"/>
+    </util:list>
+
+    <bean id="Address" class="org.genspark.Address">
+        <property name="city" value="Philadelphia"/>
+        <property name="state" value="PA"/>
+        <property name="country" value="United States"/>
+        <property name="zipcode" value="19130"/>
+    </bean>
+
+
+</beans>
